@@ -69,7 +69,7 @@ public final class App {
             BufferedReader br = new BufferedReader(new FileReader("data_element/people-2.to.regex.csv"));
             while((line = br.readLine()) != null){
                 String[] person = line.split(splitBy);
-                System.out.println();
+                System.out.println("Person [First and Last name = " + person[0] + ", Phone Number = " + person[3]);
             }
         }catch(IOException e){
             e.printStackTrace();
