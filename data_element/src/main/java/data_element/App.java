@@ -71,6 +71,7 @@ public final class App {
                 String[] person = line.split(splitBy);
                 System.out.println("Person [First and Last name = " + person[0] + ", Phone Number = " + person[3]);
             }
+            br.close();
         }catch(IOException e){
             e.printStackTrace();
         }
