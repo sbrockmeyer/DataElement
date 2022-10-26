@@ -42,27 +42,21 @@ public final class App {
                 person = line.split(splitBy);
                 System.out.println("Person [First and Last name = " + person[0] + ", Phone Number = " + person[3]);
             }
+        
             br.close();
         }catch(IOException e){
             e.printStackTrace();
         }
     
     }
+
+    public static boolean isValid(String regex) {
+        if (regex == null) {
+            return false;
+        }
+        String regexString = "([A-Z][a-zA-Z-.']* *)+|[0-9]{3}-[0-9]{3}-[0-9]{4}";
+        return regex.matches(regexString);
+    }
     
-    public static boolean isPhoneNumber(String maybePhone) {
-        // String hardCode = "123-456-7890";
-        if (maybePhone == null) {
-            return false;
-        }
-        String regexString = "[0-9]{3}-[0-9]{3}-[0-9]{4}";
-        return maybePhone.matches(regexString);
-    }
-    public static boolean isName(String maybeName){
-        if (maybeName == null){
-            return false;
-        }
-        String regex = "([A-Z][a-zA-Z-.']* *)+";
-        return maybeName.matches(regex);
-    }
 
 }
