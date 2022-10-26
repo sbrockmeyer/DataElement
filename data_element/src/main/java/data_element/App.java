@@ -40,7 +40,9 @@ public final class App {
             BufferedReader br = new BufferedReader(new FileReader("data_element/people-2.to.regex.csv"));
             while((line = br.readLine()) != null){
                 person = line.split(splitBy);
-                System.out.println("Person [First and Last name = " + person[0] + ", Phone Number = " + person[3]);
+                isValid(person[0]);
+                // System.out.println(person[3]);
+                // System.out.println("Person [First and Last name = " + person[0] + ", Phone Number = " + person[3]);
             }
         
             br.close();
@@ -54,7 +56,16 @@ public final class App {
         if (regex == null) {
             return false;
         }
+
+        // System.out.println(regex2);
+
+        // String thing = regex + " " + regex2;
+
+        
         String regexString = "([A-Z][a-zA-Z-.']* *)+|[0-9]{3}-[0-9]{3}-[0-9]{4}";
+        // System.out.println(thing.matches(regexString));
+        // System.out.println(thing.matches(regexString));
+        System.out.println(regex.matches(regexString));
         return regex.matches(regexString);
     }
     
